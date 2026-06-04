@@ -2,9 +2,11 @@ import { useState } from "react";
 import axios from "axios";
 
 function InputPanel({ setResult }) {
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     cgpa: 7.0,
-    dsa: 50,
+    dsa_score: 50,
     projects: 2,
     internships: 1,
     communication: 5,
@@ -19,29 +21,45 @@ function InputPanel({ setResult }) {
 
   const handleSubmit = async () => {
     try {
+      setLoading(true);
+
       const response = await axios.post(
-        "http://localhost:8000/predict",
+        `${import.meta.env.VITE_API_URL}/predict`,
         formData
       );
 
       setResult(response.data);
     } catch (error) {
       console.error(error);
-      alert("Backend connection failed");
+
+      if (error.response) {
+        console.log(error.response.data);
+      }
+
+      alert("Backend connection failed.");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg">
-      <h2 className="text-2xl font-bold mb-6">
+    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 shadow-xl">
+      <h2 className="text-2xl font-bold text-white mb-6">
         Student Profile
       </h2>
 
       {/* CGPA */}
       <div className="mb-5">
-        <label className="font-medium">
-          CGPA: {formData.cgpa.toFixed(1)}
-        </label>
+        <div className="flex justify-between mb-2">
+          <label className="text-zinc-300 font-medium">
+            CGPA
+          </label>
+
+          <span className="text-blue-400 font-semibold">
+            {formData.cgpa.toFixed(1)}
+          </span>
+        </div>
+
         <input
           type="range"
           name="cgpa"
@@ -50,31 +68,45 @@ function InputPanel({ setResult }) {
           step="0.1"
           value={formData.cgpa}
           onChange={handleChange}
-          className="w-full"
+          className="w-full cursor-pointer"
         />
       </div>
 
-      {/* DSA */}
+      {/* DSA Score */}
       <div className="mb-5">
-        <label className="font-medium">
-          DSA Score: {formData.dsa}
-        </label>
+        <div className="flex justify-between mb-2">
+          <label className="text-zinc-300 font-medium">
+            DSA Score
+          </label>
+
+          <span className="text-blue-400 font-semibold">
+            {formData.dsa_score}
+          </span>
+        </div>
+
         <input
           type="range"
-          name="dsa"
+          name="dsa_score"
           min="0"
           max="100"
-          value={formData.dsa}
+          value={formData.dsa_score}
           onChange={handleChange}
-          className="w-full"
+          className="w-full cursor-pointer"
         />
       </div>
 
       {/* Projects */}
       <div className="mb-5">
-        <label className="font-medium">
-          Projects: {formData.projects}
-        </label>
+        <div className="flex justify-between mb-2">
+          <label className="text-zinc-300 font-medium">
+            Projects
+          </label>
+
+          <span className="text-blue-400 font-semibold">
+            {formData.projects}
+          </span>
+        </div>
+
         <input
           type="range"
           name="projects"
@@ -82,47 +114,68 @@ function InputPanel({ setResult }) {
           max="5"
           value={formData.projects}
           onChange={handleChange}
-          className="w-full"
+          className="w-full cursor-pointer"
         />
       </div>
 
       {/* Internships */}
       <div className="mb-5">
-        <label className="font-medium">
-          Internships: {formData.internships}
-        </label>
+        <div className="flex justify-between mb-2">
+          <label className="text-zinc-300 font-medium">
+            Internships
+          </label>
+
+          <span className="text-blue-400 font-semibold">
+            {formData.internships}
+          </span>
+        </div>
+
         <input
           type="range"
           name="internships"
           min="0"
-          max="4"
+          max="3"
           value={formData.internships}
           onChange={handleChange}
-          className="w-full"
+          className="w-full cursor-pointer"
         />
       </div>
 
       {/* Communication */}
-      <div className="mb-6">
-        <label className="font-medium">
-          Communication: {formData.communication}
-        </label>
+      <div className="mb-8">
+        <div className="flex justify-between mb-2">
+          <label className="text-zinc-300 font-medium">
+            Communication
+          </label>
+
+          <span className="text-blue-400 font-semibold">
+            {formData.communication}/10
+          </span>
+        </div>
+
         <input
           type="range"
           name="communication"
-          min="0"
+          min="1"
           max="10"
           value={formData.communication}
           onChange={handleChange}
-          className="w-full"
+          className="w-full cursor-pointer"
         />
       </div>
 
       <button
         onClick={handleSubmit}
-        className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700"
+        disabled={loading}
+        className="w-full py-3 rounded-xl font-semibold text-white
+                   bg-gradient-to-r from-blue-600 to-purple-600
+                   hover:scale-[1.02]
+                   transition-all duration-300
+                   disabled:opacity-50"
       >
-        Analyze Placement Readiness
+        {loading
+          ? "Analyzing..."
+          : "Analyze Placement Readiness"}
       </button>
     </div>
   );

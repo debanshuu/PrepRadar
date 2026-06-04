@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pkl
+
+# Data & model outputs
+comparison_results.json
+
+# Environment
+.env.production
+.env
+
+# Frontend
+node_modules/
+dist/
+
+# Mac
+.DS_Store

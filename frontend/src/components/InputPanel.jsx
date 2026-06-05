@@ -28,7 +28,7 @@ function InputPanel({ setResult }) {
       const wakingTimer = setTimeout(() => setWaking(true), 2000);
 
       const response = await axios.post(
-        import.meta.env.VITE_API_URL + "/predict",
+        import.meta.env.production.VITE_API_URL + "/predict",
         formData
       );
 

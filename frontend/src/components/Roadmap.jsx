@@ -8,82 +8,92 @@ function Roadmap({ result }) {
   const getBorderColor = (color) => {
     switch (color) {
       case "red":
-        return "border-red-500";
+        return "#C41E3A";
       case "orange":
-        return "border-orange-500";
+        return "#CC6B2C";
       case "yellow":
-        return "border-yellow-500";
+        return "#B26B00";
       default:
-        return "border-blue-500";
+        return "#185FA5";
     }
   };
 
-  const getBadgeColor = (color) => {
+  const getBadgeStyle = (color) => {
     switch (color) {
       case "red":
-        return "bg-red-500/20 text-red-400";
+        return { background: "#FEE8E8", color: "#C41E3A", border: "0.5px solid #F5D0D0" };
       case "orange":
-        return "bg-orange-500/20 text-orange-400";
+        return { background: "#FFF3E8", color: "#CC6B2C", border: "0.5px solid #F5E0CC" };
       case "yellow":
-        return "bg-yellow-500/20 text-yellow-400";
+        return { background: "#FFF8E7", color: "#B26B00", border: "0.5px solid #F5E6C8" };
       default:
-        return "bg-blue-500/20 text-blue-400";
+        return { background: "#EBF0FA", color: "#185FA5", border: "0.5px solid #D6E0F0" };
     }
   };
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 shadow-xl">
-      <div className="flex items-center justify-between mb-8">
-        <h2 className="text-2xl font-bold text-white">
+    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "28px", marginTop: "24px" }}>
+      <div className="flex items-center justify-between mb-6">
+        <h2 style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px", margin: 0 }}>
           Improvement Roadmap
         </h2>
-
-        <span className="text-4xl">
-          🚀
-        </span>
+        <span style={{ fontSize: "28px" }}>🚀</span>
       </div>
 
-      <div className="space-y-5">
+      <div className="space-y-4">
         {result.roadmap.map((step, index) => (
           <div
             key={index}
-            className={`bg-zinc-800 rounded-xl p-5 border-l-4 ${getBorderColor(
-              step.color
-            )}`}
+            style={{
+              background: "#fafaf9",
+              borderRadius: "10px",
+              padding: "18px 22px",
+              borderLeft: `3px solid ${getBorderColor(step.color)}`,
+              border: `0.5px solid #e5e5e2`,
+              borderLeftWidth: "3px",
+              borderLeftColor: getBorderColor(step.color)
+            }}
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-              
               <div>
-                <h3 className="text-lg font-semibold text-white">
+                <h3 style={{ fontSize: "16px", fontWeight: 500, color: "#1a1a18", marginBottom: "8px" }}>
                   Step {index + 1}: {step.title}
                 </h3>
-
-                <p className="text-zinc-400 mt-2 leading-relaxed">
+                <p style={{ color: "#888", fontSize: "14px", fontWeight: 300, lineHeight: "1.55", margin: 0 }}>
                   {step.desc}
                 </p>
               </div>
 
               <div>
                 <span
-                  className={`px-3 py-2 rounded-full text-sm font-medium ${getBadgeColor(
-                    step.color
-                  )}`}
+                  style={{
+                    display: "inline-block",
+                    padding: "5px 14px",
+                    borderRadius: "20px",
+                    fontSize: "12px",
+                    fontWeight: 500,
+                    ...getBadgeStyle(step.color)
+                  }}
                 >
                   Priority
                 </span>
               </div>
-
             </div>
           </div>
         ))}
       </div>
 
-      <div className="mt-8 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-zinc-700 rounded-xl p-5">
-        <h3 className="text-lg font-semibold text-white mb-2">
+      <div style={{
+        marginTop: "24px",
+        background: "#FAF9F5",
+        border: "0.5px solid #e5e5e2",
+        borderRadius: "10px",
+        padding: "18px 22px"
+      }}>
+        <h3 style={{ fontSize: "15px", fontWeight: 500, color: "#1a1a18", marginBottom: "8px" }}>
           📈 Success Tip
         </h3>
-
-        <p className="text-zinc-300">
+        <p style={{ color: "#888", fontSize: "13px", fontWeight: 300, lineHeight: "1.55", margin: 0 }}>
           Focus on completing the roadmap from top to bottom.
           Improving your weakest areas first will have the biggest
           impact on your placement readiness score and company eligibility.

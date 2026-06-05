@@ -1,58 +1,70 @@
 import React from "react";
 
 function ReadinessOutput({ result }) {
-  const getTierColor = () => {
+  const getTierStyle = () => {
     switch (result.tier) {
       case "Top Tier":
-        return "bg-green-500/20 text-green-400";
+        return { background: "#EBF5E8", color: "#3B6D11", border: "0.5px solid #D4E8CD" };
       case "Mid Tier":
-        return "bg-yellow-500/20 text-yellow-400";
+        return { background: "#FFF8E7", color: "#B26B00", border: "0.5px solid #F5E6C8" };
       case "Entry Tier":
-        return "bg-orange-500/20 text-orange-400";
+        return { background: "#FFF3E8", color: "#CC6B2C", border: "0.5px solid #F5E0CC" };
       default:
-        return "bg-red-500/20 text-red-400";
+        return { background: "#FEE8E8", color: "#C41E3A", border: "0.5px solid #F5D0D0" };
     }
   };
 
   const getProgressColor = () => {
+    if (result.score >= 75) return "#3B6D11";
+    if (result.score >= 55) return "#B26B00";
+    return "#C41E3A";
+  };
+
+  const getProgressBg = () => {
     if (result.score >= 75) return "bg-green-500";
     if (result.score >= 55) return "bg-yellow-500";
     return "bg-red-500";
   };
 
+  const tierStyle = getTierStyle();
+
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 shadow-xl">
+    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "28px" }}>
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-white">
+        <h2 style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px", margin: 0 }}>
           Placement Readiness Score
         </h2>
-
-        <div className="text-5xl">
-          🎯
-        </div>
+        <span style={{ fontSize: "28px" }}>🎯</span>
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 items-center">
         
         {/* Left Side */}
         <div>
-          <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <h1 style={{ fontSize: "56px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-1.5px", margin: 0 }}>
             {result.score}%
           </h1>
 
           <div className="mt-4">
             <span
-              className={`px-4 py-2 rounded-full text-sm font-semibold ${getTierColor()}`}
+              style={{
+                display: "inline-block",
+                padding: "5px 14px",
+                borderRadius: "20px",
+                fontSize: "12px",
+                fontWeight: 500,
+                ...tierStyle
+              }}
             >
               {result.tier}
             </span>
           </div>
 
-          <p className="text-zinc-400 mt-4">
+          <p style={{ color: "#888", fontSize: "12px", marginTop: "20px", marginBottom: "4px", fontWeight: 300 }}>
             Expected Package
           </p>
 
-          <p className="text-xl font-semibold text-green-400">
+          <p style={{ fontSize: "17px", fontWeight: 500, color: "#3B6D11", margin: 0 }}>
             {result.salary_hint}
           </p>
         </div>
@@ -60,56 +72,53 @@ function ReadinessOutput({ result }) {
         {/* Right Side */}
         <div>
           <div className="flex justify-between mb-2">
-            <span className="text-zinc-400">
+            <span style={{ color: "#888", fontSize: "13px", fontWeight: 300 }}>
               Placement Readiness
             </span>
-
-            <span className="text-white font-semibold">
+            <span style={{ color: "#1a1a18", fontSize: "14px", fontWeight: 500 }}>
               {result.score}%
             </span>
           </div>
 
-          <div className="w-full bg-zinc-800 rounded-full h-5 overflow-hidden">
+          <div style={{ width: "100%", background: "#f0f0ed", borderRadius: "20px", height: "8px", overflow: "hidden" }}>
             <div
-              className={`${getProgressColor()} h-5 rounded-full transition-all duration-700`}
+              className={getProgressBg()}
               style={{
                 width: `${result.score}%`,
+                height: "8px",
+                borderRadius: "20px",
+                transition: "width 0.7s ease",
               }}
             />
           </div>
 
-          <div className="mt-6 grid grid-cols-3 gap-3">
-            
-            <div className="bg-zinc-800 rounded-xl p-3 text-center">
-              <p className="text-xs text-zinc-400">
+          <div className="grid grid-cols-3 gap-3 mt-6">
+            <div style={{ background: "#fafaf9", border: "0.5px solid #e5e5e2", borderRadius: "8px", padding: "12px", textAlign: "center" }}>
+              <p style={{ color: "#aaa", fontSize: "11px", fontWeight: 300, marginBottom: "6px" }}>
                 Tier
               </p>
-
-              <p className="font-semibold text-white mt-1">
-                {result.tier}
+              <p style={{ fontSize: "14px", fontWeight: 500, color: "#1a1a18", margin: 0 }}>
+                {result.tier === "Top Tier" ? "Top" : result.tier === "Mid Tier" ? "Mid" : "Entry"}
               </p>
             </div>
 
-            <div className="bg-zinc-800 rounded-xl p-3 text-center">
-              <p className="text-xs text-zinc-400">
+            <div style={{ background: "#fafaf9", border: "0.5px solid #e5e5e2", borderRadius: "8px", padding: "12px", textAlign: "center" }}>
+              <p style={{ color: "#aaa", fontSize: "11px", fontWeight: 300, marginBottom: "6px" }}>
                 Score
               </p>
-
-              <p className="font-semibold text-white mt-1">
+              <p style={{ fontSize: "14px", fontWeight: 500, color: "#1a1a18", margin: 0 }}>
                 {result.score}
               </p>
             </div>
 
-            <div className="bg-zinc-800 rounded-xl p-3 text-center">
-              <p className="text-xs text-zinc-400">
-                Salary
+            <div style={{ background: "#fafaf9", border: "0.5px solid #e5e5e2", borderRadius: "8px", padding: "12px", textAlign: "center" }}>
+              <p style={{ color: "#aaa", fontSize: "11px", fontWeight: 300, marginBottom: "6px" }}>
+                Package
               </p>
-
-              <p className="font-semibold text-green-400 mt-1">
-                ₹
+              <p style={{ fontSize: "14px", fontWeight: 500, color: "#3B6D11", margin: 0 }}>
+                {result.salary_hint?.split(" ")[0] || "₹"}
               </p>
             </div>
-
           </div>
         </div>
 

@@ -31,78 +31,68 @@ function DimensionCharts({ result }) {
   };
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 shadow-xl">
+    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "28px" }}>
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-white">
+        <h2 style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px", margin: 0 }}>
           Skill Analysis
         </h2>
-
-        <span className="text-4xl">
-          📊
-        </span>
+        <span style={{ fontSize: "28px" }}>📊</span>
       </div>
 
       <div className="space-y-5">
         {scores.map((item, index) => (
           <div key={index}>
-            
             <div className="flex justify-between mb-2">
-              <span className="text-zinc-300 font-medium">
+              <span style={{ color: "#666", fontSize: "14px", fontWeight: 500 }}>
                 {item.name}
               </span>
-
-              <span className="text-white font-semibold">
+              <span style={{ color: "#1a1a18", fontSize: "14px", fontWeight: 500 }}>
                 {item.value}%
               </span>
             </div>
 
-            <div className="w-full bg-zinc-800 rounded-full h-4 overflow-hidden">
+            <div style={{ width: "100%", background: "#f0f0ed", borderRadius: "20px", height: "8px", overflow: "hidden" }}>
               <div
-                className={`${getBarColor(
-                  item.value
-                )} h-4 rounded-full transition-all duration-700`}
+                className={getBarColor(item.value)}
                 style={{
                   width: `${item.value}%`,
+                  height: "8px",
+                  borderRadius: "20px",
+                  transition: "width 0.7s ease",
                 }}
               />
             </div>
-
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-3 gap-4 mt-8">
-        
-        <div className="bg-zinc-800 rounded-xl p-4 text-center">
-          <p className="text-zinc-400 text-sm">
+      <div className="grid grid-cols-3 gap-3 mt-8">
+        <div style={{ background: "#fafaf9", border: "0.5px solid #e5e5e2", borderRadius: "8px", padding: "12px", textAlign: "center" }}>
+          <p style={{ color: "#888", fontSize: "12px", fontWeight: 300, marginBottom: "4px" }}>
             Strong
           </p>
-
-          <p className="text-green-400 font-semibold mt-1">
+          <p style={{ color: "#3B6D11", fontWeight: 500, fontSize: "15px", margin: 0 }}>
             75%+
           </p>
         </div>
 
-        <div className="bg-zinc-800 rounded-xl p-4 text-center">
-          <p className="text-zinc-400 text-sm">
+        <div style={{ background: "#fafaf9", border: "0.5px solid #e5e5e2", borderRadius: "8px", padding: "12px", textAlign: "center" }}>
+          <p style={{ color: "#888", fontSize: "12px", fontWeight: 300, marginBottom: "4px" }}>
             Average
           </p>
-
-          <p className="text-yellow-400 font-semibold mt-1">
+          <p style={{ color: "#B26B00", fontWeight: 500, fontSize: "15px", margin: 0 }}>
             55-74%
           </p>
         </div>
 
-        <div className="bg-zinc-800 rounded-xl p-4 text-center">
-          <p className="text-zinc-400 text-sm">
+        <div style={{ background: "#fafaf9", border: "0.5px solid #e5e5e2", borderRadius: "8px", padding: "12px", textAlign: "center" }}>
+          <p style={{ color: "#888", fontSize: "12px", fontWeight: 300, marginBottom: "4px" }}>
             Needs Work
           </p>
-
-          <p className="text-red-400 font-semibold mt-1">
+          <p style={{ color: "#C41E3A", fontWeight: 500, fontSize: "15px", margin: 0 }}>
             Below 55%
           </p>
         </div>
-
       </div>
     </div>
   );

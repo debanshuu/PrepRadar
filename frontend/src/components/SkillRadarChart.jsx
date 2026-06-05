@@ -35,32 +35,47 @@ function SkillRadarChart({ result }) {
   ];
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 shadow-xl h-full">
-      <h2 className="text-xl font-bold text-white mb-4">
+    <div style={{ 
+      background: "#fff", 
+      border: "0.5px solid #e5e5e2", 
+      borderRadius: "12px", 
+      padding: "24px",
+      height: "100%"
+    }}>
+      <h2 style={{ 
+        fontSize: "16px", 
+        fontWeight: 500, 
+        color: "#1a1a18", 
+        letterSpacing: "-0.2px", 
+        margin: 0,
+        marginBottom: "16px"
+      }}>
         Skill Distribution
       </h2>
 
       <ResponsiveContainer width="100%" height={280}>
         <RadarChart data={data}>
-          <PolarGrid stroke="#525252" />
+          <PolarGrid stroke="#e5e5e2" strokeWidth={0.5} />
 
           <PolarAngleAxis
             dataKey="subject"
-            tick={{ fill: "#d4d4d4", fontSize: 12 }}
+            tick={{ fill: "#888", fontSize: 12, fontWeight: 400 }}
           />
 
           <PolarRadiusAxis
             angle={30}
             domain={[0, 100]}
-            tick={{ fill: "#737373", fontSize: 10 }}
+            tick={{ fill: "#bbb", fontSize: 11 }}
+            axisLine={{ stroke: "#e5e5e2", strokeWidth: 0.5 }}
           />
 
           <Radar
             name="Skills"
             dataKey="value"
-            stroke="#8b5cf6"
-            fill="#8b5cf6"
-            fillOpacity={0.6}
+            stroke="#185FA5"
+            strokeWidth={1.5}
+            fill="#185FA5"
+            fillOpacity={0.1}
           />
         </RadarChart>
       </ResponsiveContainer>

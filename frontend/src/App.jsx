@@ -18,46 +18,32 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Navbar */}
-      <header className="sticky top-0 z-50 bg-black border-b border-zinc-800">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <img
-              src={logo}
-              alt="PrepRadar Logo"
-              className="w-14 h-14 object-contain"
-            />
+    <div className="min-h-screen" style={{ background: "#fafaf9", color: "#1a1a18", fontFamily: "'DM Sans', sans-serif" }}>
+      {/* Navbar - Minimal */}
+      <header className="sticky top-0 z-50" style={{ background: "#fff", borderBottom: "0.5px solid #e5e5e2", height: "70px" }}>
+        <div className="max-w-7xl mx-auto px-8 h-full flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div style={{ width: "34px", height: "34px", background: "#1a1a18", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <span style={{ color: "#fff", fontSize: "14px", fontWeight: 500, fontFamily: "'DM Mono', monospace" }}>PR</span>
+            </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-2xl font-bold">
-                  PrepRadar
-                </h1>
-                <span className="px-2 py-1 text-[10px] font-semibold bg-blue-500/20 text-blue-400 rounded-full">
-                  AI Powered
-                </span>
+                <span style={{ fontSize: "18px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px" }}>PrepRadar</span>
+                <span style={{ fontSize: "11px", background: "#f0f0ed", color: "#666", padding: "3px 9px", borderRadius: "20px", border: "0.5px solid #e5e5e2" }}>AI</span>
               </div>
-              <p className="text-xs text-zinc-400">
-                Placement Readiness Analyzer
-              </p>
+              <div style={{ fontSize: "11px", color: "#bbb", marginTop: "2px" }}>Placement Readiness</div>
             </div>
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#dashboard" className="text-zinc-400 hover:text-white">
-              Dashboard
-            </a>
-            <a href="#features" className="text-zinc-400 hover:text-white">
-              Features
-            </a>
-            <a href="#roadmap" className="text-zinc-400 hover:text-white">
-              Roadmap
-            </a>
+            <a href="#dashboard" style={{ fontSize: "14px", color: "#888", textDecoration: "none" }}>Dashboard</a>
+            <a href="#features" style={{ fontSize: "14px", color: "#888", textDecoration: "none" }}>Features</a>
+            <a href="#roadmap" style={{ fontSize: "14px", color: "#888", textDecoration: "none" }}>Roadmap</a>
           </nav>
 
           <button
             onClick={scrollToDashboard}
-            className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-semibold"
+            style={{ background: "#1a1a18", color: "#fff", border: "none", padding: "10px 22px", borderRadius: "8px", fontSize: "14px", fontWeight: 500, cursor: "pointer" }}
           >
             Analyze Now
           </button>
@@ -65,81 +51,66 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-24 px-6 text-center">
-        <div className="max-w-7xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6">
-            <span className="w-2 h-2 bg-blue-400 rounded-full" />
-            <span className="text-blue-400 text-sm">
-              AI-Powered Placement Intelligence
-            </span>
+      <section className="py-20 px-8" style={{ maxWidth: "1000px", margin: "0 auto" }}>
+        <div>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "13px", color: "#888", marginBottom: "24px", letterSpacing: "0.5px", textTransform: "uppercase" }}>
+            <span style={{ width: "6px", height: "6px", background: "#b5b5b0", borderRadius: "50%", display: "inline-block" }} />
+            AI-Powered Placement Intelligence
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold max-w-5xl mx-auto leading-tight">
-            AI-Powered Placement
-            <span className="text-blue-400">
-              {" "}Readiness Analyzer
-            </span>
+          <h1 style={{ fontSize: "52px", fontWeight: 300, lineHeight: "1.2", letterSpacing: "-1.5px", color: "#1a1a18", marginBottom: "18px" }}>
+            Placement readiness,<br />
+            <em style={{ fontStyle: "normal", fontWeight: 500 }}>measured precisely.</em>
           </h1>
 
-          <p className="text-zinc-400 text-lg md:text-xl mt-8 max-w-3xl mx-auto">
-            Evaluate your skills, compare yourself with industry requirements,
-            and get a personalized roadmap to become placement-ready.
+          <p style={{ fontSize: "17px", color: "#888", lineHeight: "1.6", maxWidth: "520px", fontWeight: 300, marginBottom: "32px" }}>
+            Evaluate your skills, compare with industry benchmarks, and receive a personalized roadmap to land the role you want.
           </p>
 
-          <div className="flex justify-center gap-4 mt-10 flex-wrap">
+          <div className="flex gap-3 items-center mb-14">
             <button
               onClick={scrollToDashboard}
-              className="px-8 py-4 bg-blue-600 rounded-xl font-semibold hover:bg-blue-700"
+              style={{ background: "#1a1a18", color: "#fff", border: "none", padding: "10px 22px", borderRadius: "8px", fontSize: "14px", fontWeight: 500, cursor: "pointer" }}
             >
               Analyze Now →
             </button>
-
-            <button className="px-8 py-4 border border-zinc-700 rounded-xl text-zinc-300 hover:bg-zinc-900">
+            <button style={{ background: "transparent", border: "0.5px solid #d5d5d0", color: "#555", padding: "10px 22px", borderRadius: "8px", fontSize: "14px", cursor: "pointer" }}>
               Learn More
             </button>
           </div>
 
-          <div id="features" className="mt-12 flex justify-center gap-3 flex-wrap">
-            {[
-              "AI Readiness Score",
-              "Skill Analysis",
-              "Company Matching",
-              "Personalized Roadmap",
-            ].map((item) => (
+          <div id="features" className="flex gap-3 flex-wrap" style={{ marginBottom: "40px" }}>
+            <span style={{ fontSize: "12px", color: "#aaa", textTransform: "uppercase", letterSpacing: "0.8px", marginRight: "6px", lineHeight: "2.5" }}>Includes</span>
+            {["AI Readiness Score", "Skill Analysis", "Company Matching", "Personalized Roadmap"].map((item) => (
               <span
                 key={item}
-                className="px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-300"
+                style={{ fontSize: "13px", color: "#666", background: "#f5f5f2", border: "0.5px solid #e8e8e4", padding: "6px 14px", borderRadius: "20px" }}
               >
                 {item}
               </span>
             ))}
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mt-14">
+          <div style={{ display: "flex", gap: 0, border: "0.5px solid #e5e5e2", borderRadius: "12px", background: "#fff", overflow: "hidden", width: "fit-content" }}>
             {[
-              ["8+", "Companies Tracked", "text-blue-400"],
-              ["95%", "Model Accuracy", "text-green-400"],
-              ["5", "Skill Dimensions", "text-purple-400"],
-              ["AI", "Powered Analysis", "text-yellow-400"],
+              ["8+", "Companies tracked", "#185FA5"],
+              ["95%", "Model accuracy", "#3B6D11"],
+              ["5", "Skill dimensions", "#534AB7"],
+              ["AI", "Powered analysis", "#1a1a18"],
             ].map(([value, label, color]) => (
-              <div
-                key={label}
-                className="bg-zinc-900 border border-zinc-800 rounded-xl p-5"
-              >
-                <p className={`text-3xl font-bold ${color}`}>
-                  {value}
-                </p>
-                <p className="text-zinc-400 text-sm mt-1">
-                  {label}
-                </p>
+              <div key={label} style={{ padding: "18px 32px", borderRight: "0.5px solid #e5e5e2", textAlign: "center" }}>
+                <div style={{ fontSize: "26px", fontWeight: 500, color: color, letterSpacing: "-0.5px" }}>{value}</div>
+                <div style={{ fontSize: "12px", color: "#aaa", fontWeight: 300, marginTop: "4px" }}>{label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      <hr style={{ border: "none", borderTop: "0.5px solid #e8e8e4", margin: "0 32px" }} />
+
       {/* Dashboard */}
-      <main id="dashboard" className="max-w-7xl mx-auto p-6">
+      <main id="dashboard" className="max-w-7xl mx-auto p-8">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-4">
             <div className="sticky top-24 space-y-6">
@@ -157,12 +128,20 @@ function App() {
                 <ModelComparison result={result} />
               </div>
             ) : (
-              <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-16 text-center">
-                <div className="text-6xl mb-6">🎯</div>
-                <h2 className="text-3xl font-bold mb-4">Ready to Analyze?</h2>
-                <p className="text-zinc-400">
-                  Fill in your profile details and let AI evaluate your placement readiness.
-                </p>
+              <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "48px", display: "flex", alignItems: "center", gap: "32px" }}>
+                <div style={{ width: "56px", height: "56px", background: "#f5f5f2", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "28px" }}>
+                  🎯
+                </div>
+                <div>
+                  <div style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", marginBottom: "6px", letterSpacing: "-0.3px" }}>Ready to analyze?</div>
+                  <div style={{ fontSize: "15px", color: "#999", fontWeight: 300, lineHeight: "1.55" }}>Fill in your profile details and let AI evaluate your placement readiness.</div>
+                </div>
+                <button
+                  onClick={scrollToDashboard}
+                  style={{ background: "#1a1a18", color: "#fff", border: "none", padding: "10px 22px", borderRadius: "8px", fontSize: "14px", fontWeight: 500, cursor: "pointer", marginLeft: "auto", flexShrink: 0 }}
+                >
+                  Get Started →
+                </button>
               </div>
             )}
           </div>
@@ -175,8 +154,9 @@ function App() {
         )}
       </main>
 
-      <footer className="border-t border-zinc-800 mt-20 py-8 px-6">
-        <div className="max-w-7xl mx-auto text-center text-zinc-500 text-sm">
+      {/* Footer */}
+      <footer className="border-t border-gray-200 mt-16 py-8 px-8">
+        <div className="max-w-7xl mx-auto text-center" style={{ color: "#aaa", fontSize: "13px", fontWeight: 300 }}>
           <p>© 2026 PrepRadar. AI-Powered Placement Readiness Analyzer.</p>
         </div>
       </footer>

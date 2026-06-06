@@ -8,7 +8,8 @@ comparison_results.json
 
 # Environment
 .env.production
-
+.env
+.env.development
 
 # Frontend
 node_modules/

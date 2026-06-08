@@ -60,9 +60,18 @@ function App() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-12 sm:py-20 px-4 sm:px-8" style={{ maxWidth: "1000px", margin: "0 auto" }}>
-        <div>
+      {/* Hero Section - Fixed vertical centering */}
+      <section 
+        className="px-4 sm:px-8" 
+        style={{ 
+          maxWidth: "1000px", 
+          margin: "0 auto",
+          minHeight: "calc(100vh - 70px)",
+          display: "flex",
+          alignItems: "center"
+        }}
+      >
+        <div className="w-full">
           <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "13px", color: "#888", marginBottom: "24px", letterSpacing: "0.5px", textTransform: "uppercase" }}>
             <span style={{ width: "6px", height: "6px", background: "#b5b5b0", borderRadius: "50%", display: "inline-block" }} />
             AI-Powered Placement Intelligence

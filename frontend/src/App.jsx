@@ -19,9 +19,9 @@ function App() {
   return (
     <div className="min-h-screen" style={{ background: "#fafaf9", color: "#1a1a18", fontFamily: "'DM Sans', sans-serif" }}>
       {/* Navbar - Minimal */}
-      <header className="sticky top-0 z-50" style={{ background: "#fff", borderBottom: "0.5px solid #e5e5e2", height: "70px" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 h-full flex items-center justify-between">
-          <div className="flex items-center gap-2 sm:gap-3">
+      <header className="sticky top-0 z-50" style={{ background: "#fff", borderBottom: "0.5px solid #e5e5e2", minHeight: "70px" }}>
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 md:px-8 py-3 sm:py-0 h-auto sm:h-full flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <div style={{ width: "34px", height: "34px", background: "#1a1a18", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <span style={{ color: "#fff", fontSize: "14px", fontWeight: 500, fontFamily: "'DM Mono', monospace" }}>PR</span>
             </div>
@@ -34,7 +34,7 @@ function App() {
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8 flex-shrink-0">
             <a href="#dashboard" style={{ fontSize: "14px", color: "#888", textDecoration: "none" }}>Dashboard</a>
             <a href="#features" style={{ fontSize: "14px", color: "#888", textDecoration: "none" }}>Features</a>
             <a href="#roadmap" style={{ fontSize: "14px", color: "#888", textDecoration: "none" }}>Roadmap</a>
@@ -42,7 +42,18 @@ function App() {
 
           <button
             onClick={scrollToDashboard}
-            style={{ background: "#1a1a18", color: "#fff", border: "none", padding: "8px 16px sm:10px 22px", borderRadius: "8px", fontSize: "14px", fontWeight: 500, cursor: "pointer" }}
+            style={{ 
+              background: "#1a1a18", 
+              color: "#fff", 
+              border: "none", 
+              padding: "8px 20px", 
+              borderRadius: "8px", 
+              fontSize: "14px", 
+              fontWeight: 500, 
+              cursor: "pointer",
+              whiteSpace: "nowrap",
+              flexShrink: 0
+            }}
           >
             Analyze Now
           </button>
@@ -66,7 +77,7 @@ function App() {
             Evaluate your skills, compare with industry benchmarks, and receive a personalized roadmap to land the role you want.
           </p>
 
-          <div className="flex gap-3 items-center mb-14">
+          <div className="flex gap-3 items-center mb-14 flex-wrap">
             <button
               onClick={scrollToDashboard}
               style={{ background: "#1a1a18", color: "#fff", border: "none", padding: "10px 22px", borderRadius: "8px", fontSize: "14px", fontWeight: 500, cursor: "pointer" }}
@@ -87,23 +98,23 @@ function App() {
             ))}
           </div>
 
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 0, border: "0.5px solid #e5e5e2", borderRadius: "12px", background: "#fff", overflow: "hidden", width: "100%", maxWidth: "fit-content" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 0, border: "0.5px solid #e5e5e2", borderRadius: "12px", background: "#fff", overflow: "hidden", width: "100%" }}>
             {[
               ["8+", "Companies tracked", "#185FA5"],
               ["95%", "Model accuracy", "#3B6D11"],
               ["5", "Skill dimensions", "#534AB7"],
               ["AI", "Powered analysis", "#1a1a18"],
             ].map(([value, label, color], index) => (
-              <div key={label} style={{ padding: "18px 32px", borderRight: index === 3 ? "none" : "0.5px solid #e5e5e2", borderBottom: "0.5px solid #e5e5e2", textAlign: "center", flex: "1 0 auto" }}>
-                <div style={{ fontSize: "26px", fontWeight: 500, color: color, letterSpacing: "-0.5px" }}>{value}</div>
-                <div style={{ fontSize: "12px", color: "#aaa", fontWeight: 300, marginTop: "4px" }}>{label}</div>
+              <div key={label} style={{ padding: "18px 16px", borderRight: index === 3 ? "none" : "0.5px solid #e5e5e2", borderBottom: "0.5px solid #e5e5e2", textAlign: "center", flex: "1 0 120px" }}>
+                <div style={{ fontSize: "clamp(20px, 5vw, 26px)", fontWeight: 500, color: color, letterSpacing: "-0.5px" }}>{value}</div>
+                <div style={{ fontSize: "11px", color: "#aaa", fontWeight: 300, marginTop: "4px" }}>{label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <hr style={{ border: "none", borderTop: "0.5px solid #e8e8e4", margin: "0 16px sm:32px" }} />
+      <hr style={{ border: "none", borderTop: "0.5px solid #e8e8e4", margin: "0 16px" }} />
 
       {/* Dashboard */}
       <main id="dashboard" className="max-w-7xl mx-auto p-4 sm:p-6 md:p-8">
@@ -124,17 +135,17 @@ function App() {
                 <ModelComparison result={result} />
               </div>
             ) : (
-              <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "24px sm:48px", display: "flex", flexDirection: "column sm:flex-row", alignItems: "center", gap: "32px" }}>
+              <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "24px", display: "flex", flexDirection: "column", alignItems: "center", gap: "24px" }}>
                 <div style={{ width: "56px", height: "56px", background: "#f5f5f2", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "28px" }}>
                   🎯
                 </div>
-                <div style={{ textAlign: "center sm:left" }}>
+                <div style={{ textAlign: "center" }}>
                   <div style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", marginBottom: "6px", letterSpacing: "-0.3px" }}>Ready to analyze?</div>
                   <div style={{ fontSize: "15px", color: "#999", fontWeight: 300, lineHeight: "1.55" }}>Fill in your profile details and let AI evaluate your placement readiness.</div>
                 </div>
                 <button
                   onClick={scrollToDashboard}
-                  style={{ background: "#1a1a18", color: "#fff", border: "none", padding: "10px 22px", borderRadius: "8px", fontSize: "14px", fontWeight: 500, cursor: "pointer", marginLeft: "auto", flexShrink: 0 }}
+                  style={{ background: "#1a1a18", color: "#fff", border: "none", padding: "10px 22px", borderRadius: "8px", fontSize: "14px", fontWeight: 500, cursor: "pointer", flexShrink: 0 }}
                 >
                   Get Started →
                 </button>

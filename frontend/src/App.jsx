@@ -6,7 +6,6 @@ import StrengthsWeaknesses from "./components/StrengthsWeaknesses";
 import ModelComparison from "./components/ModelComparison";
 import SkillRadarChart from "./components/SkillRadarChart";
 import Roadmap from "./components/Roadmap";
-import logo from "/assets/logo.png";
 
 function App() {
   const [result, setResult] = useState(null);
@@ -58,7 +57,7 @@ function App() {
             AI-Powered Placement Intelligence
           </div>
 
-          <h1 style={{ fontSize: "36px sm:52px", fontWeight: 300, lineHeight: "1.2", letterSpacing: "-1.5px", color: "#1a1a18", marginBottom: "18px" }}>
+          <h1 style={{ fontSize: "clamp(32px, 8vw, 52px)", fontWeight: 300, lineHeight: "1.2", letterSpacing: "-1.5px", color: "#1a1a18", marginBottom: "18px" }}>
             Placement readiness,<br />
             <em style={{ fontStyle: "normal", fontWeight: 500 }}>measured precisely.</em>
           </h1>

@@ -24,7 +24,7 @@ function ModelComparison({ result }) {
   };
 
   return (
-    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px sm:28px" }}>
+    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px" }}>
       <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
         <h2 style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px", margin: 0 }}>
           Company Readiness

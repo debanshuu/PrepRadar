@@ -24,7 +24,6 @@ function InputPanel({ setResult }) {
     try {
       setLoading(true);
 
-      // Show waking message after 2s if still loading (Render cold start)
       const wakingTimer = setTimeout(() => setWaking(true), 2000);
 
       const response = await axios.post(
@@ -47,7 +46,7 @@ function InputPanel({ setResult }) {
   };
 
   return (
-    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px sm:24px" }}>
+    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px" }}>
       <h2 style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px", marginBottom: "24px" }}>
         Student Profile
       </h2>
@@ -88,7 +87,6 @@ function InputPanel({ setResult }) {
         }
       `}</style>
 
-      {/* CGPA */}
       <div className="mb-6">
         <div className="flex justify-between mb-2 flex-wrap gap-2">
           <label style={{ color: "#666", fontSize: "14px", fontWeight: 500 }}>CGPA</label>
@@ -98,7 +96,6 @@ function InputPanel({ setResult }) {
           value={formData.cgpa} onChange={handleChange} className="range-input" />
       </div>
 
-      {/* DSA Score */}
       <div className="mb-6">
         <div className="flex justify-between mb-2 flex-wrap gap-2">
           <label style={{ color: "#666", fontSize: "14px", fontWeight: 500 }}>DSA Score</label>
@@ -108,7 +105,6 @@ function InputPanel({ setResult }) {
           value={formData.dsa_score} onChange={handleChange} className="range-input" />
       </div>
 
-      {/* Projects */}
       <div className="mb-6">
         <div className="flex justify-between mb-2 flex-wrap gap-2">
           <label style={{ color: "#666", fontSize: "14px", fontWeight: 500 }}>Projects</label>
@@ -118,7 +114,6 @@ function InputPanel({ setResult }) {
           value={formData.projects} onChange={handleChange} className="range-input" />
       </div>
 
-      {/* Internships */}
       <div className="mb-6">
         <div className="flex justify-between mb-2 flex-wrap gap-2">
           <label style={{ color: "#666", fontSize: "14px", fontWeight: 500 }}>Internships</label>
@@ -128,7 +123,6 @@ function InputPanel({ setResult }) {
           value={formData.internships} onChange={handleChange} className="range-input" />
       </div>
 
-      {/* Communication */}
       <div className="mb-8">
         <div className="flex justify-between mb-2 flex-wrap gap-2">
           <label style={{ color: "#666", fontSize: "14px", fontWeight: 500 }}>Communication</label>
@@ -160,7 +154,6 @@ function InputPanel({ setResult }) {
         {loading ? "Analyzing..." : "Analyze Placement Readiness"}
       </button>
 
-      {/* Render cold start message */}
       {waking && (
         <p style={{ textAlign: "center", fontSize: "12px", color: "#aaa", marginTop: "10px", fontWeight: 300 }}>
           Waking up server, this may take a few seconds...

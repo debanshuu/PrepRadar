@@ -9,7 +9,7 @@ function StrengthsWeaknesses({ result }) {
         background: "#fff", 
         border: "0.5px solid #e5e5e2", 
         borderRadius: "12px", 
-        padding: "20px sm:24px"
+        padding: "20px"
       }}>
         <div className="flex items-center gap-3 mb-5 flex-wrap">
           <span style={{ fontSize: "24px" }}>💪</span>
@@ -33,7 +33,7 @@ function StrengthsWeaknesses({ result }) {
                   background: "#fafaf9",
                   borderLeft: "3px solid #3B6D11",
                   borderRadius: "8px",
-                  padding: "12px 16px sm:14px 18px",
+                  padding: "12px 16px",
                   transition: "all 0.2s ease"
                 }}
                 onMouseEnter={(e) => {
@@ -65,7 +65,7 @@ function StrengthsWeaknesses({ result }) {
           background: "#EBF5E8",
           border: "0.5px solid #D4E8CD",
           borderRadius: "8px",
-          padding: "12px 16px sm:14px 18px"
+          padding: "12px 16px"
         }}>
           <p style={{ color: "#3B6D11", fontSize: "12px", fontWeight: 300, margin: 0, lineHeight: "1.5" }}>
             Keep leveraging these strengths during coding tests, interviews, and project discussions.
@@ -78,7 +78,7 @@ function StrengthsWeaknesses({ result }) {
         background: "#fff", 
         border: "0.5px solid #e5e5e2", 
         borderRadius: "12px", 
-        padding: "20px sm:24px"
+        padding: "20px"
       }}>
         <div className="flex items-center gap-3 mb-5 flex-wrap">
           <span style={{ fontSize: "24px" }}>📈</span>
@@ -102,7 +102,7 @@ function StrengthsWeaknesses({ result }) {
                   background: "#fafaf9",
                   borderLeft: "3px solid #C41E3A",
                   borderRadius: "8px",
-                  padding: "12px 16px sm:14px 18px",
+                  padding: "12px 16px",
                   transition: "all 0.2s ease"
                 }}
                 onMouseEnter={(e) => {
@@ -134,7 +134,7 @@ function StrengthsWeaknesses({ result }) {
           background: "#FEE8E8",
           border: "0.5px solid #F5D0D0",
           borderRadius: "8px",
-          padding: "12px 16px sm:14px 18px"
+          padding: "12px 16px"
         }}>
           <p style={{ color: "#C41E3A", fontSize: "12px", fontWeight: 300, margin: 0, lineHeight: "1.5" }}>
             Focus on these areas first to improve your placement readiness score.

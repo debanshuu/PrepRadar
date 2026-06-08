@@ -32,7 +32,7 @@ function Roadmap({ result }) {
   };
 
   return (
-    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px sm:28px", marginTop: "24px" }}>
+    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px", marginTop: "24px" }}>
       <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
         <h2 style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px", margin: 0 }}>
           Improvement Roadmap
@@ -47,7 +47,7 @@ function Roadmap({ result }) {
             style={{
               background: "#fafaf9",
               borderRadius: "10px",
-              padding: "16px 18px sm:18px 22px",
+              padding: "16px 18px",
               borderLeft: `3px solid ${getBorderColor(step.color)}`,
               border: `0.5px solid #e5e5e2`,
               borderLeftWidth: "3px",
@@ -88,7 +88,7 @@ function Roadmap({ result }) {
         background: "#FAF9F5",
         border: "0.5px solid #e5e5e2",
         borderRadius: "10px",
-        padding: "16px 18px sm:18px 22px"
+        padding: "16px 18px"
       }}>
         <h3 style={{ fontSize: "15px", fontWeight: 500, color: "#1a1a18", marginBottom: "8px" }}>
           📈 Success Tip

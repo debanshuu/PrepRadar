@@ -14,12 +14,6 @@ function ReadinessOutput({ result }) {
     }
   };
 
-  const getProgressColor = () => {
-    if (result.score >= 75) return "#3B6D11";
-    if (result.score >= 55) return "#B26B00";
-    return "#C41E3A";
-  };
-
   const getProgressBg = () => {
     if (result.score >= 75) return "bg-green-500";
     if (result.score >= 55) return "bg-yellow-500";
@@ -29,7 +23,7 @@ function ReadinessOutput({ result }) {
   const tierStyle = getTierStyle();
 
   return (
-    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px sm:28px" }}>
+    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px" }}>
       <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
         <h2 style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px", margin: 0 }}>
           Placement Readiness Score
@@ -39,9 +33,8 @@ function ReadinessOutput({ result }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
         
-        {/* Left Side */}
         <div>
-          <h1 style={{ fontSize: "44px sm:56px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-1.5px", margin: 0 }}>
+          <h1 style={{ fontSize: "clamp(40px, 10vw, 56px)", fontWeight: 500, color: "#1a1a18", letterSpacing: "-1.5px", margin: 0 }}>
             {result.score}%
           </h1>
 
@@ -69,7 +62,6 @@ function ReadinessOutput({ result }) {
           </p>
         </div>
 
-        {/* Right Side */}
         <div>
           <div className="flex justify-between mb-2">
             <span style={{ color: "#888", fontSize: "13px", fontWeight: 300 }}>

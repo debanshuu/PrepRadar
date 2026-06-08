@@ -39,7 +39,7 @@ function SkillRadarChart({ result }) {
       background: "#fff", 
       border: "0.5px solid #e5e5e2", 
       borderRadius: "12px", 
-      padding: "20px sm:24px",
+      padding: "20px",
       height: "100%"
     }}>
       <h2 style={{ 

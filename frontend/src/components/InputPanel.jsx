@@ -47,7 +47,7 @@ function InputPanel({ setResult }) {
   };
 
   return (
-    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "24px" }}>
+    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px sm:24px" }}>
       <h2 style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px", marginBottom: "24px" }}>
         Student Profile
       </h2>
@@ -77,11 +77,20 @@ function InputPanel({ setResult }) {
           cursor: pointer;
           border: none;
         }
+        @media (max-width: 640px) {
+          .range-input {
+            height: 4px;
+          }
+          .range-input::-webkit-slider-thumb {
+            width: 18px;
+            height: 18px;
+          }
+        }
       `}</style>
 
       {/* CGPA */}
       <div className="mb-6">
-        <div className="flex justify-between mb-2">
+        <div className="flex justify-between mb-2 flex-wrap gap-2">
           <label style={{ color: "#666", fontSize: "14px", fontWeight: 500 }}>CGPA</label>
           <span style={{ color: "#1a1a18", fontSize: "14px", fontWeight: 500 }}>{formData.cgpa.toFixed(1)}</span>
         </div>
@@ -91,7 +100,7 @@ function InputPanel({ setResult }) {
 
       {/* DSA Score */}
       <div className="mb-6">
-        <div className="flex justify-between mb-2">
+        <div className="flex justify-between mb-2 flex-wrap gap-2">
           <label style={{ color: "#666", fontSize: "14px", fontWeight: 500 }}>DSA Score</label>
           <span style={{ color: "#1a1a18", fontSize: "14px", fontWeight: 500 }}>{formData.dsa_score}</span>
         </div>
@@ -101,7 +110,7 @@ function InputPanel({ setResult }) {
 
       {/* Projects */}
       <div className="mb-6">
-        <div className="flex justify-between mb-2">
+        <div className="flex justify-between mb-2 flex-wrap gap-2">
           <label style={{ color: "#666", fontSize: "14px", fontWeight: 500 }}>Projects</label>
           <span style={{ color: "#1a1a18", fontSize: "14px", fontWeight: 500 }}>{formData.projects}</span>
         </div>
@@ -111,7 +120,7 @@ function InputPanel({ setResult }) {
 
       {/* Internships */}
       <div className="mb-6">
-        <div className="flex justify-between mb-2">
+        <div className="flex justify-between mb-2 flex-wrap gap-2">
           <label style={{ color: "#666", fontSize: "14px", fontWeight: 500 }}>Internships</label>
           <span style={{ color: "#1a1a18", fontSize: "14px", fontWeight: 500 }}>{formData.internships}</span>
         </div>
@@ -121,7 +130,7 @@ function InputPanel({ setResult }) {
 
       {/* Communication */}
       <div className="mb-8">
-        <div className="flex justify-between mb-2">
+        <div className="flex justify-between mb-2 flex-wrap gap-2">
           <label style={{ color: "#666", fontSize: "14px", fontWeight: 500 }}>Communication</label>
           <span style={{ color: "#1a1a18", fontSize: "14px", fontWeight: 500 }}>{formData.communication}/10</span>
         </div>

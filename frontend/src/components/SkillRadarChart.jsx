@@ -39,7 +39,7 @@ function SkillRadarChart({ result }) {
       background: "#fff", 
       border: "0.5px solid #e5e5e2", 
       borderRadius: "12px", 
-      padding: "24px",
+      padding: "20px sm:24px",
       height: "100%"
     }}>
       <h2 style={{ 
@@ -53,19 +53,19 @@ function SkillRadarChart({ result }) {
         Skill Distribution
       </h2>
 
-      <ResponsiveContainer width="100%" height={280}>
-        <RadarChart data={data}>
+      <ResponsiveContainer width="100%" height={250} minHeight={240}>
+        <RadarChart data={data} margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
           <PolarGrid stroke="#e5e5e2" strokeWidth={0.5} />
 
           <PolarAngleAxis
             dataKey="subject"
-            tick={{ fill: "#888", fontSize: 12, fontWeight: 400 }}
+            tick={{ fill: "#888", fontSize: 11, fontWeight: 400 }}
           />
 
           <PolarRadiusAxis
             angle={30}
             domain={[0, 100]}
-            tick={{ fill: "#bbb", fontSize: 11 }}
+            tick={{ fill: "#bbb", fontSize: 10 }}
             axisLine={{ stroke: "#e5e5e2", strokeWidth: 0.5 }}
           />
 

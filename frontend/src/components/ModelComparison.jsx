@@ -24,8 +24,8 @@ function ModelComparison({ result }) {
   };
 
   return (
-    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "28px" }}>
-      <div className="flex items-center justify-between mb-6">
+    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px sm:28px" }}>
+      <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
         <h2 style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px", margin: 0 }}>
           Company Readiness
         </h2>
@@ -35,7 +35,7 @@ function ModelComparison({ result }) {
       <div className="space-y-5">
         {companies.map((item, index) => (
           <div key={index}>
-            <div className="flex justify-between mb-2">
+            <div className="flex justify-between mb-2 flex-wrap gap-2">
               <span style={{ color: "#666", fontSize: "14px", fontWeight: 500 }}>
                 {item.company}
               </span>
@@ -59,7 +59,7 @@ function ModelComparison({ result }) {
         ))}
       </div>
 
-      <div className="flex gap-4 mt-6 pt-2">
+      <div className="flex flex-wrap gap-4 mt-6 pt-2">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#3B6D11" }} />
           <span style={{ fontSize: "12px", color: "#888" }}>High (80%+)</span>

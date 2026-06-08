@@ -2,16 +2,16 @@ import React from "react";
 
 function StrengthsWeaknesses({ result }) {
   return (
-    <div className="grid md:grid-cols-2 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
       
       {/* Strengths */}
       <div style={{ 
         background: "#fff", 
         border: "0.5px solid #e5e5e2", 
         borderRadius: "12px", 
-        padding: "24px"
+        padding: "20px sm:24px"
       }}>
-        <div className="flex items-center gap-3 mb-5">
+        <div className="flex items-center gap-3 mb-5 flex-wrap">
           <span style={{ fontSize: "24px" }}>💪</span>
           <h2 style={{ 
             fontSize: "18px", 
@@ -33,7 +33,7 @@ function StrengthsWeaknesses({ result }) {
                   background: "#fafaf9",
                   borderLeft: "3px solid #3B6D11",
                   borderRadius: "8px",
-                  padding: "14px 18px",
+                  padding: "12px 16px sm:14px 18px",
                   transition: "all 0.2s ease"
                 }}
                 onMouseEnter={(e) => {
@@ -44,10 +44,10 @@ function StrengthsWeaknesses({ result }) {
                 }}
               >
                 <div className="flex items-center gap-2">
-                  <span style={{ color: "#3B6D11", fontSize: "16px" }}>
+                  <span style={{ color: "#3B6D11", fontSize: "16px", flexShrink: 0 }}>
                     ✓
                   </span>
-                  <span style={{ color: "#1a1a18", fontSize: "14px", fontWeight: 500 }}>
+                  <span style={{ color: "#1a1a18", fontSize: "14px", fontWeight: 500, wordBreak: "break-word" }}>
                     {strength}
                   </span>
                 </div>
@@ -65,7 +65,7 @@ function StrengthsWeaknesses({ result }) {
           background: "#EBF5E8",
           border: "0.5px solid #D4E8CD",
           borderRadius: "8px",
-          padding: "14px 18px"
+          padding: "12px 16px sm:14px 18px"
         }}>
           <p style={{ color: "#3B6D11", fontSize: "12px", fontWeight: 300, margin: 0, lineHeight: "1.5" }}>
             Keep leveraging these strengths during coding tests, interviews, and project discussions.
@@ -78,9 +78,9 @@ function StrengthsWeaknesses({ result }) {
         background: "#fff", 
         border: "0.5px solid #e5e5e2", 
         borderRadius: "12px", 
-        padding: "24px"
+        padding: "20px sm:24px"
       }}>
-        <div className="flex items-center gap-3 mb-5">
+        <div className="flex items-center gap-3 mb-5 flex-wrap">
           <span style={{ fontSize: "24px" }}>📈</span>
           <h2 style={{ 
             fontSize: "18px", 
@@ -102,7 +102,7 @@ function StrengthsWeaknesses({ result }) {
                   background: "#fafaf9",
                   borderLeft: "3px solid #C41E3A",
                   borderRadius: "8px",
-                  padding: "14px 18px",
+                  padding: "12px 16px sm:14px 18px",
                   transition: "all 0.2s ease"
                 }}
                 onMouseEnter={(e) => {
@@ -113,10 +113,10 @@ function StrengthsWeaknesses({ result }) {
                 }}
               >
                 <div className="flex items-center gap-2">
-                  <span style={{ color: "#C41E3A", fontSize: "16px" }}>
+                  <span style={{ color: "#C41E3A", fontSize: "16px", flexShrink: 0 }}>
                     !
                   </span>
-                  <span style={{ color: "#1a1a18", fontSize: "14px", fontWeight: 500 }}>
+                  <span style={{ color: "#1a1a18", fontSize: "14px", fontWeight: 500, wordBreak: "break-word" }}>
                     {weakness}
                   </span>
                 </div>
@@ -134,7 +134,7 @@ function StrengthsWeaknesses({ result }) {
           background: "#FEE8E8",
           border: "0.5px solid #F5D0D0",
           borderRadius: "8px",
-          padding: "14px 18px"
+          padding: "12px 16px sm:14px 18px"
         }}>
           <p style={{ color: "#C41E3A", fontSize: "12px", fontWeight: 300, margin: 0, lineHeight: "1.5" }}>
             Focus on these areas first to improve your placement readiness score.

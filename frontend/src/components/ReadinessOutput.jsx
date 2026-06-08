@@ -29,19 +29,19 @@ function ReadinessOutput({ result }) {
   const tierStyle = getTierStyle();
 
   return (
-    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "28px" }}>
-      <div className="flex items-center justify-between mb-6">
+    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px sm:28px" }}>
+      <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
         <h2 style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px", margin: 0 }}>
           Placement Readiness Score
         </h2>
         <span style={{ fontSize: "28px" }}>🎯</span>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
         
         {/* Left Side */}
         <div>
-          <h1 style={{ fontSize: "56px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-1.5px", margin: 0 }}>
+          <h1 style={{ fontSize: "44px sm:56px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-1.5px", margin: 0 }}>
             {result.score}%
           </h1>
 
@@ -92,7 +92,7 @@ function ReadinessOutput({ result }) {
             />
           </div>
 
-          <div className="grid grid-cols-3 gap-3 mt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
             <div style={{ background: "#fafaf9", border: "0.5px solid #e5e5e2", borderRadius: "8px", padding: "12px", textAlign: "center" }}>
               <p style={{ color: "#aaa", fontSize: "11px", fontWeight: 300, marginBottom: "6px" }}>
                 Tier

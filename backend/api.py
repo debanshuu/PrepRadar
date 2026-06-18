@@ -42,6 +42,6 @@ def model_comparison():
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail="Run train.py first.")
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def root():
     return {"status": "ok", "message": "PrepRadar API is running"}

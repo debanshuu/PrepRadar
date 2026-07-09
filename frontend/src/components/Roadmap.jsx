@@ -32,8 +32,8 @@ function Roadmap({ result }) {
   };
 
   return (
-    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "28px", marginTop: "24px" }}>
-      <div className="flex items-center justify-between mb-6">
+    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px", marginTop: "24px" }}>
+      <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
         <h2 style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px", margin: 0 }}>
           Improvement Roadmap
         </h2>
@@ -47,7 +47,7 @@ function Roadmap({ result }) {
             style={{
               background: "#fafaf9",
               borderRadius: "10px",
-              padding: "18px 22px",
+              padding: "16px 18px",
               borderLeft: `3px solid ${getBorderColor(step.color)}`,
               border: `0.5px solid #e5e5e2`,
               borderLeftWidth: "3px",
@@ -55,7 +55,7 @@ function Roadmap({ result }) {
             }}
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-              <div>
+              <div className="flex-1">
                 <h3 style={{ fontSize: "16px", fontWeight: 500, color: "#1a1a18", marginBottom: "8px" }}>
                   Step {index + 1}: {step.title}
                 </h3>
@@ -64,7 +64,7 @@ function Roadmap({ result }) {
                 </p>
               </div>
 
-              <div>
+              <div className="flex-shrink-0">
                 <span
                   style={{
                     display: "inline-block",
@@ -88,7 +88,7 @@ function Roadmap({ result }) {
         background: "#FAF9F5",
         border: "0.5px solid #e5e5e2",
         borderRadius: "10px",
-        padding: "18px 22px"
+        padding: "16px 18px"
       }}>
         <h3 style={{ fontSize: "15px", fontWeight: 500, color: "#1a1a18", marginBottom: "8px" }}>
           📈 Success Tip

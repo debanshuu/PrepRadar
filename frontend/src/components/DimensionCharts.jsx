@@ -31,8 +31,8 @@ function DimensionCharts({ result }) {
   };
 
   return (
-    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "28px" }}>
-      <div className="flex items-center justify-between mb-6">
+    <div style={{ background: "#fff", border: "0.5px solid #e5e5e2", borderRadius: "12px", padding: "20px" }}>
+      <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
         <h2 style={{ fontSize: "20px", fontWeight: 500, color: "#1a1a18", letterSpacing: "-0.3px", margin: 0 }}>
           Skill Analysis
         </h2>
@@ -66,7 +66,7 @@ function DimensionCharts({ result }) {
         ))}
       </div>
 
-      <div className="grid grid-cols-3 gap-3 mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-8">
         <div style={{ background: "#fafaf9", border: "0.5px solid #e5e5e2", borderRadius: "8px", padding: "12px", textAlign: "center" }}>
           <p style={{ color: "#888", fontSize: "12px", fontWeight: 300, marginBottom: "4px" }}>
             Strong

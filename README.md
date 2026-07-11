@@ -3,8 +3,6 @@
 
 A full-stack web application that evaluates your placement readiness across 5 dimensions and gives you a personalized improvement roadmap — powered by a machine learning salary predictor.
 
-**Live Demo:** [coming soon]
-
 ---
 
 ## What it does

@@ -176,7 +176,9 @@ function App() {
           <p>© 2026 PrepRadar. AI-Powered Placement Readiness Analyzer.</p>
         </div>
       </footer>
+      console.log("API URL:", import.meta.env.VITE_API_URL);
     </div>
+    
   );
 }
 
